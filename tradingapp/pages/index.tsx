@@ -25,7 +25,7 @@ export default function Home() {
         <div className={styles.header}><Header/></div>
         <div className={styles.nav}><MainNav/></div>
         <div><Extra/></div>
-        <div className={styles.footer}><Footer/></div>
+        <div className={styles.footer} id="footer"><Footer/></div>
 
       </main>
     </>

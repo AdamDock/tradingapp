@@ -6,6 +6,7 @@ import MainNav from 'components/mainNav.tsx'
 import Header from 'components/header.tsx'
 import Footer from 'components/footer.tsx'
 import Extra from 'components/extracomponent.tsx'
+import Calendar from 'components/calendarOutline.tsx'
 
 
 
@@ -20,12 +21,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.header}><Header/></div>
         <div className={styles.nav}><MainNav/></div>
-        <div><Extra/></div>
-        <div className={styles.footer}><Footer/></div>
+        <div><Calendar/></div>
+        <div className={styles.footer} id="footer"><Footer/></div>
 
       </main>
     </>

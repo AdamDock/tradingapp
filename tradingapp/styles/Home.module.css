@@ -1,3 +1,4 @@
+
 .main {
   padding: 0;
   margin: 0;
@@ -13,21 +14,44 @@
 .main > div {
   border: 2px solid red;
 }
+.main > * {
+  outline: 1px solid red;
+}
 .header{
   position: absolute;
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
   height: 30vh;
   width: 100vw;
   text-align: center;
+  text-justify: inter-word;
   justify-content: center;
+  align-items: center;
+  padding: 10px;
   
 }
+.calendar1 {
+  position: relative;
+  
+
+
+  top: 30vh;
+  bottom: 30vh;
+
+
+}
+
   
 .nav{
   position: fixed;
+  z-index: 999;
   top: 30%;
   display: flex;
   flex-direction: column;
+  background-color: transparent;
 }
+
 .button {
   background-color: transparent;
   height:60px;
@@ -37,6 +61,19 @@
 .button > h1 {
   font-weight:5000;
   font-size: 24px;
+}
+.button:hover{
+  color: chocolate;
+  background-color: #f5e9dc;
+}
+.shrinknav{
+  transform: scale(.5);
+  transition: all 0.3s ease;
+  left:-60px;
+}
+.shrinknav:hover{
+  transform: scale(1);
+  left: 0;
 }
 .footer {
   height:20vh;

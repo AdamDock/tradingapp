@@ -1,15 +1,55 @@
-import React from "react";
-import styles from '@/styles/Home.module.css'
+import React, { useEffect, useState } from "react";
+import styles from '@/styles/Home.module.css';
+const day = 24*60*60*1000;
+const storageTimeKey = 'lastApiCallTime';
+const storageLastQuoteKey = 'lastQuote';
+const storageLastAuthorKey = 'lastAuthor';
+const currentTimeInMilliseconds = Date.now();
 
-function Header(){
-    return (
-    <>
+
+function Header() {
+  const [quote, setQuote] = useState('');
+  const [author, setAuthor] = useState('');
+
+  useEffect(() => {
+    const storageLastQuote = localStorage.getItem(storageLastQuoteKey);
+    const storageLastAuthor = localStorage.getItem(storageLastAuthorKey);
+    const storageTime = localStorage.getItem(storageTimeKey);
+
+    if(storageLastQuote && storageLastAuthor && storageTime +day > currentTimeInMilliseconds){
+        setQuote(storageLastQuote);
+        setAuthor(storageLastAuthor);
+    } else {
+    // Fetch quote data
+    fetch('/api/quotes')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setQuote(data[0].quote);
+        setAuthor(data[0].author);
+        localStorage.setItem(storageTimeKey, Date.now());
+        localStorage.setItem(storageLastQuoteKey, data[0].quote);
+        localStorage.setItem(storageLastAuthorKey, data[0].author);
+      })
+      .catch((error) => {
+        console.error('Error fetching quote:', error);
+        // Handle the error, e.g., set a fallback value for quote
+        setQuote('Error fetching quote');
+      });
+    }
+  }, []);
+
+  return (
     <div className={styles.header}>
-        <h3>Quote</h3>
-        <h1>-Author</h1>
+      <h4>"{quote}"</h4>
+      <br/>
+      <h2><em>-{author}</em></h2>
     </div>
-    </>
-    );
+  );
 }
 
 export default Header;

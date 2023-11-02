@@ -3,6 +3,7 @@ import styles from '@/styles/Home.module.css'
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { title } from "process";
 
 function counter(){
     let n=1;
@@ -15,17 +16,16 @@ function counter(){
 function MainNav(){
     const router = useRouter();
     useEffect(()=>{
-    const targetComponent = router.asPath.replace('/home#s', '');
-    console.log(targetComponent);
+        console.log(router)
+    const targetComponent = router.asPath.replace(`${router.route}#s`,'');
     const element = document.getElementById(targetComponent);
-    console.log(element);
     if(element){
         element.scrollIntoView({behavior: 'smooth'});
     }
 }, [router.asPath]);
     return (
     <>
-    <div className={styles.nav}>
+    <div className={`${styles.nav} ${styles.shrinknav}`}> 
         <Link href="/home">
             <button className={styles.button}><h1>Home {counter()}</h1></button>
         </Link>
