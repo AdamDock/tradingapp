@@ -5,14 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { title } from "process";
 
-function counter(){
-    let n=1;
-    for(let i =5; i < 10; i++){
-        n++;
-    }
-    return n;
 
-}
 function MainNav(){
     const router = useRouter();
     useEffect(()=>{
@@ -27,7 +20,7 @@ function MainNav(){
     <>
     <div className={`${styles.nav} ${styles.shrinknav}`}> 
         <Link href="/home">
-            <button className={styles.button}><h1>Home {counter()}</h1></button>
+            <button className={styles.button}><h1>Home</h1></button>
         </Link>
         <Link href="/insider">
             <button className={styles.button}> <h1>Insider Watch</h1></button>

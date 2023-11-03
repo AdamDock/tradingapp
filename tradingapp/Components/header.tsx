@@ -14,8 +14,14 @@ function Header() {
   useEffect(() => {
     const storageLastQuote = localStorage.getItem(storageLastQuoteKey);
     const storageLastAuthor = localStorage.getItem(storageLastAuthorKey);
-    const storageTime = localStorage.getItem(storageTimeKey);
-
+    const storageTime = parseInt(localStorage.getItem(storageTimeKey), 10);
+    const storageTimeWithDay = storageTime + day;
+    console.log(storageLastQuote && storageLastAuthor && storageTime +day > currentTimeInMilliseconds)
+    console.log(storageLastQuote);
+    console.log(storageLastAuthor);
+    console.log(storageTime + day);
+    console.log(storageTimeWithDay);
+    console.log(currentTimeInMilliseconds);
     if(storageLastQuote && storageLastAuthor && storageTime +day > currentTimeInMilliseconds){
         setQuote(storageLastQuote);
         setAuthor(storageLastAuthor);
@@ -42,9 +48,9 @@ function Header() {
       });
     }
   }, []);
-
+  
   return (
-    <div className={styles.header}>
+    <div>
       <h4>"{quote}"</h4>
       <br/>
       <h2><em>-{author}</em></h2>

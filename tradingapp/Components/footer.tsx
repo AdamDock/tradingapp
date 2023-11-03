@@ -4,10 +4,19 @@ import styles from '@/styles/Home.module.css'
 function Footer(){
     return (
     <div className={styles.column}>
-        <span className={styles.mailingList}>
+         <span>
+            <h2>
+                Friday Five
+            </h2>
+            <p>
+                Sign up today and get weekly stock insights
+            </p>
+        </span>
+        <div className={styles.mailinglist}>
             <h3>Join Mailing List</h3>
-            <input></input><button>Submit</button>
-            </span>
+            <input></input><button>Sign me up!</button>
+        </div>
+       
         <span>
             <h3>Educational Guides</h3>
             <ul>
