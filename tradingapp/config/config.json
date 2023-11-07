@@ -1,0 +1,20 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Asdfghjkl",
+    "database": "adamdockstader",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Asdfghjkl",
+    "database": "adamdockstader", // Change this to your test database name
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL", // If you're using an environment variable for the production database URL
+    "dialect": "postgres"
+  }
+}

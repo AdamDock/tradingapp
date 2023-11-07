@@ -1,29 +1,33 @@
 {
-  "name": "tradingapp",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "node server.js",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@fullcalendar/daygrid": "^6.1.9",
-    "@fullcalendar/react": "^6.1.9",
-    "axios": "^1.6.0",
-    "express": "^4.18.2",
-    "moment": "^2.29.4",
-    "next": "13.5.4",
-    "node-fetch": "^3.3.2",
-    "react": "^18",
-    "react-dom": "^18",
-    "request": "^2.88.2"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "typescript": "^5"
-  }
+        "name": "tradingapp",
+        "version": "0.1.0",
+        "private": true,
+        "scripts": {
+                "dev": "next dev",
+                "build": "next build",
+                "start": "node server.js",
+                "lint": "next lint"
+        },
+        "dependencies": {
+                "@fullcalendar/daygrid": "^6.1.9",
+                "@fullcalendar/react": "^6.1.9",
+                "axios": "^1.6.0",
+                "express": "^4.18.2",
+                "moment": "^2.29.4",
+                "next": "13.5.4",
+                "node-fetch": "^3.3.2",
+                "pg": "^8.11.3",
+                "pg-hstore": "^2.3.4",
+                "react": "^18",
+                "react-dom": "^18",
+                "request": "^2.88.2",
+                "sequelize": "^6.34.0",
+                "sequelize-cli": "^6.6.2"
+        },
+        "devDependencies": {
+                "@types/node": "^20",
+                "@types/react": "^18",
+                "@types/react-dom": "^18",
+                "typescript": "^5"
+        }
 }
