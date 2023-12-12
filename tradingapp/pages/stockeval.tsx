@@ -6,6 +6,7 @@ import MainNav from 'components/mainNav.tsx'
 import Header from 'components/header.tsx'
 import Footer from 'components/footer.tsx'
 import Extra from 'components/extracomponent.tsx'
+import Evaluator from 'components/stockEvaluator.tsx'
 
 
 
@@ -26,7 +27,7 @@ export default function Home() {
           <div className={styles.header}><Header/></div>
           <div className={styles.content}>
            <div>
-          
+              <Evaluator/>
            </div>
           </div>
           <div className={styles.footer} id="footer"><Footer/></div>

@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const category = 'happiness';
+const category = 'money';
 const apiKey = 'G4LJBaD9NGa0JyYg6zHboqkg9L0e5YaFFSXo744P';
 const url = `https://api.api-ninjas.com/v1/quotes?category=${category}`;
 

@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from '@/styles/Home.module.css'
+import MailingList from "./mailingField";
 
 function Footer(){
+    const [email, setEmail] = useState('');
+    const [isSubscribed, setIsSubcribed] = useState(false);
+
+    const handleSubmit = (event)=> {
+        event.preventDefault();
+        if(!isSubscribed){
+            console.log('subscribed with email: ', email);
+            setIsSubcribed(true);
+        }
+    };
     return (
     <div className={styles.column}>
          <span>
@@ -12,10 +23,29 @@ function Footer(){
                 Sign up today and get weekly stock insights
             </p>
         </span>
+
         <div className={styles.mailinglist}>
-            <h3>Join Mailing List</h3>
-            <input></input><button>Sign me up!</button>
+     {!isSubscribed ? (
+       <form onSubmit={handleSubmit}>
+         <label>
+           Join Mailing List:
+           <input
+             type="email"
+             value={email}
+             onChange={(e) => setEmail(e.target.value)}
+             required
+           />
+         </label>
+         <button type="submit">Sign me up!</button>
+       </form>
+     ) : (
+       <MailingList isSubscribed={isSubscribed} email={email} />
+       
+     )}
         </div>
+   
+     
+       
        
         <span>
             <h3>Educational Guides</h3>
