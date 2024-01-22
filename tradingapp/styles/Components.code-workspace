@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../Components"
+		},
+		{
+			"path": "../node_modules"
+		},
+		{
+			"path": "../pages"
+		},
+		{
+			"path": "../public"
+		},
+		{
+			"path": "."
+		}
+	]
+}
