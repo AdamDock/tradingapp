@@ -5,9 +5,13 @@ type Data = {
   name: string
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  console.log(req.body);
+  if (req.method === 'POST') {
+    console.log('POST request')
+    res.status(200).json({ name: 'John Doe' })
+  }
 }

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.css";
+import * as React from 'react';
+
 
 const Bluechip = () => {
   // State variables to manage form data and result

@@ -104,8 +104,17 @@
 .inputField {
   width: 100%; /* Make input fields fill the width of the container */
   box-sizing: border-box; /* Include padding and border in the width calculation */
-  border-radius: 4px;
-  margin-top: 5px; /* Add some space between labels and input fields */
+  border-radius: .375rem;
+  margin-top: .25rem; /* Add some space between labels and input fields */
+  border-color: transparent;
+  background-color: #f7fafc;
+}
+.inputField:focus {
+  border-color: #6b7280;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+  background-color: #ffffff;
+
 }
 
 

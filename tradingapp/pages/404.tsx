@@ -1,5 +1,5 @@
 export default function error(){
     return (
-        <><h1>errorr</h1></>
+        <><h1>erroreeer</h1></>
     );
 }

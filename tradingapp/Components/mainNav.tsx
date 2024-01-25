@@ -2,7 +2,7 @@ import React from "react";
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link';
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { title } from "process";
 
 
@@ -16,9 +16,12 @@ function MainNav(){
         element.scrollIntoView({behavior: 'smooth'});
     }
 }, [router.asPath]);
+    
+    
     return (
     <>
     <div className={`${styles.nav} ${styles.shrinknav}`}> 
+
         <Link href="/home">
             <button className={styles.button}><h1>Home</h1></button>
         </Link>

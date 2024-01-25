@@ -1,18 +1,54 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from '@/styles/Home.module.css'
 import MailingList from "./mailingField";
+import axios from "axios";
+import { set } from "mongoose";
+
+
+
+
 
 function Footer(){
     const [email, setEmail] = useState('');
-    const [isSubscribed, setIsSubcribed] = useState(false);
+    const [error, setError] = useState('');
 
-    const handleSubmit = (event)=> {
-        event.preventDefault();
-        if(!isSubscribed){
-            console.log('subscribed with email: ', email);
-            setIsSubcribed(true);
+    const [isSubscribed, setIsSubcribed] = useState(false);
+    const [subscriberCount, setSubscriberCount] = useState(0);
+    useEffect(() => {
+        const fetchSubscriberCount = async () => {
+        try {
+            const res = await axios.get(`/api/subscriber`);
+            const data = await res.data;
+            setSubscriberCount(data.count);
+        } catch (error) {
+            console.error('Error getting subscriber count:', error);
         }
-    };
+    }
+        fetchSubscriberCount();
+
+    }, []);
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post(`/api/subscriber`, {email});
+            setIsSubcribed(true);
+            
+        }
+        catch(err){
+            console.log(err.response.status);
+            if(err.response.status === 400){
+                console.log('email already exists');
+                setError('Email already subscribed');
+            }
+        }
+        
+    }
+    const handleChange = (e: any) => {
+        setEmail(e.target.value);
+    }
+
+    
     return (
     <div className={styles.column}>
          <span>
@@ -28,7 +64,11 @@ function Footer(){
      {!isSubscribed ? (
        <form onSubmit={handleSubmit}>
          <label>
-           Join Mailing List:
+            {error === ''?
+            <div>Join {subscriberCount} others and subscribe!</div>:
+            <div>{error} Join {subscriberCount} others and subscribe!</div>
+            }
+          
            <input
              type="email"
              value={email}
