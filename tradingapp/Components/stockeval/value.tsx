@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "@/styles/Home.module.css";
+import Button from "@mui/material/Button";   
 
 const Value = () => {
   // State variables to manage form data and result
@@ -45,11 +46,13 @@ const Value = () => {
 
   return (
     <>
-      <div>
-        <h2>Value</h2>
+  <div className="bg-hover-color rounded-xl outline">        
+       <h2 className="text-xl font-bold text-center">Value</h2>
         <form className={styles.formContainer} onSubmit={handleSubmit}>
           <label>
-            Earnings per Share ratio:
+          <h1 className="font-semibold text-lg text-chocolate">            Earnings per Share ratio:
+</h1>
+
             <input
               type="number"
               value={earnings}
@@ -59,7 +62,9 @@ const Value = () => {
             />
           </label>
           <label>
-            Price to Book ratio:
+          <h1 className="font-semibold text-lg text-chocolate">            Price to Book ratio:
+</h1>
+
             <input
               type="number"
               value={priceToBook}
@@ -69,7 +74,9 @@ const Value = () => {
             />
           </label>
           <label>
-            Debt-to-Equity ratio:
+          <h1 className="font-semibold text-lg text-chocolate">            Debt-to-Equity ratio:
+</h1>
+
             <input
               type="number"
               value={debtToEquity}
@@ -79,7 +86,9 @@ const Value = () => {
             />
           </label>
           <label>
-            Free Cash Flow Yield:
+          <h1 className="font-semibold text-lg text-chocolate">            Free Cash Flow Yield:
+</h1>
+
             <input
               type="number"
               value={freeCashFlow}
@@ -89,7 +98,9 @@ const Value = () => {
             />
           </label>
           <label>
-            Price to Cash ratio:
+          <h1 className="font-semibold text-lg text-chocolate">            Price to Cash ratio:
+</h1>
+
             <input
               type="number"
               value={priceToCash}
@@ -98,16 +109,20 @@ const Value = () => {
               className={styles.inputField}
             />
           </label>
-          <button type="submit">Submit!</button>
-        </form>
+          <Button 
+          type="submit" 
+          variant="contained"
+          className="p-2 m-4 text-lg font-bold text-black hover:text-chocolate hover:bg-hover-color bg-hover-color">
+            Submit!
+          </Button>        </form>
       </div>
-      <div>
-        <h3>
-          Value Quotient: {result !== null ? result.toFixed(2) : "Submit the form to see the result"}
-          <br/>
-          Stock: {result1 !== null ? (result1 ===0 ? "Great Value": (result1===1 ? "Good Value": "Bad Value")): "Submit the form to see the result"}
-        </h3>
-      </div>
+      
+      {result !== null ? <div className="bg-hover-color rounded-xl outline mt-3">
+        <h3 className="text-chocolate text-center">
+          <h1 className="text-lg font-bold">Value Quotient</h1>{result !== null ? result.toFixed(2) : ""}</h3>
+          <h3 className="text-chocolate text-center">
+          <h1 className="text-lg font-bold">Stock:</h1>{result1 !== null ? (result1 ===0 ? "Great Value": (result1===1 ? "Good Value": "Bad Value")): ""}</h3>
+      </div> : ""}
     </>
   );
 };

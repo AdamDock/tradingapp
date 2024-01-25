@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "@/styles/Home.module.css";
-
+import Button from "@mui/material/Button";
+ 
 const Growth = () => {
   // State variables to manage form data and result
   const [forwardPERatio, setForwardPERatio] = useState("");
@@ -38,11 +39,14 @@ const Growth = () => {
 
   return (
     <>
-      <div>
-        <h2>Growth</h2>
+       <div className="bg-hover-color rounded-xl outline">        
+
+        <h2 className="text-xl font-bold text-center">Growth</h2>
         <form className={styles.formContainer} onSubmit={handleSubmit}>
           <label>
-            Forward P/E ratio:
+          <h1 className="font-semibold text-lg text-chocolate">            Forward P/E ratio:
+</h1>
+
             <input
               type="number"
               value={forwardPERatio}
@@ -52,7 +56,9 @@ const Growth = () => {
             />
           </label>
           <label>
-            Revenue Growth:
+          <h1 className="font-semibold text-lg text-chocolate">            Revenue Growth:
+</h1>
+
             <input
               type="number"
               value={revenueGrowth}
@@ -62,7 +68,9 @@ const Growth = () => {
             />
           </label>
           <label>
-            Price to Sales ratio:
+          <h1 className="font-semibold text-lg text-chocolate">            Price to Sales ratio:
+</h1>
+
             <input
               type="number"
               value={priceToSalesRatio}
@@ -72,7 +80,9 @@ const Growth = () => {
             />
           </label>
           <label>
-            Return on Equity:
+          <h1 className="font-semibold text-lg text-chocolate">            Return on Equity:
+</h1>
+
             <input
               type="number"
               value={returnOnEquity}
@@ -82,7 +92,9 @@ const Growth = () => {
             />
           </label>
           <label>
-            PEG Ratio:
+          <h1 className="font-semibold text-lg text-chocolate">            PEG Ratio:
+</h1>
+
             <input
               type="number"
               value={pegRatio}
@@ -91,14 +103,18 @@ const Growth = () => {
               className={styles.inputField}
             />
           </label>
-          <button type="submit">Submit!</button>
-        </form>
+          <Button 
+          type="submit" 
+          variant="contained"
+          className="p-2 m-4 text-lg font-bold text-black hover:text-chocolate hover:bg-hover-color bg-hover-color">
+            Submit!
+          </Button>        </form>
       </div>
-      <div>
-        <h3>
-          Growth rating: {growthResult !== null ? growthResult : "Submit the form to see the result"}
-        </h3>
-      </div>
+      
+      {growthResult !== null ? <div className="bg-hover-color rounded-xl outline mt-3">
+        <h3 className="text-chocolate text-center">
+          <h1 className="text-lg font-bold">Growth Rating:</h1>{growthResult}</h3>
+      </div> : ""}
     </>
   );
 };

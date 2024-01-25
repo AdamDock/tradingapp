@@ -3,7 +3,6 @@ import styles from '@/styles/Home.module.css'
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { title } from "process";
 
 
 function MainNav(){
@@ -20,13 +19,13 @@ function MainNav(){
     
     return (
     <>
-    <div className={`${styles.nav} ${styles.shrinknav}`}> 
+    <div className={`${styles.nav} ${styles.shrinknav} border-black border rounded-xl`}> 
 
         <Link href="/home">
             <button className={styles.button}><h1>Home</h1></button>
         </Link>
-        <Link href="/insider">
-            <button className={styles.button}> <h1>Insider Watch</h1></button>
+        <Link href="/marketwatch">
+            <button className={styles.button}> <h1>Market Watch</h1></button>
         </Link>
         <Link href="/stockeval">
             <button className={styles.button}> <h1>Stock Evaluator</h1></button>

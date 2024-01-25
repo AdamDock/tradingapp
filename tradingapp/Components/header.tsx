@@ -45,11 +45,11 @@ function Header() {
   }, []);
   
   return (
-    <div>
-      <h4>"{quote}"</h4>
-      <br/>
-      <h2><em>-{author}</em></h2>
-    </div>
+    <div className="hover:bg-hover-color rounded-xl hover:outline mt-3">
+        <h3 className="hover:text-chocolate text-center">
+          <h1 className="text-lg font-bold">{quote}</h1><em>-{author}</em></h3>
+      </div>
+   
   );
 }
 

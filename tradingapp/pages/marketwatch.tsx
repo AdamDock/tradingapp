@@ -29,10 +29,8 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.container}>
           <div className={styles.header}><Header/></div>
-          <div className={styles.content}>
-           <div>
-          
-           </div>
+          <div className={`${styles.content} flex items-stretch justify-center`}>
+              <h1 className='text-center font-bold text-4xl'>Market Watch</h1>
           </div>
           <div className={styles.footer} id="footer"><Footer/></div>
         </div>

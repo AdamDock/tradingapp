@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "@/styles/Home.module.css";
-
+import Button from "@mui/material/Button";
+   
 const Momentum = () => {
   // State variables to manage form data and result
   const [rsi, setRsi] = useState("");
@@ -38,11 +39,13 @@ const Momentum = () => {
 
   return (
     <>
-      <div>
-        <h2>Momentum</h2>
+ <div className="bg-hover-color rounded-xl outline">        
+ <h2 className="text-xl font-bold text-center">Momentum</h2>
         <form className={styles.formContainer} onSubmit={handleSubmit}>
           <label>
-            Relative Strength Index (RSI):
+          <h1 className="font-semibold text-lg text-chocolate">            Relative Strength Index (RSI):
+</h1>
+
             <input
               type="number"
               value={rsi}
@@ -52,7 +55,9 @@ const Momentum = () => {
             />
           </label>
           <label>
-            On-Balance Volume (OBV):
+          <h1 className="font-semibold text-lg text-chocolate">            On-Balance Volume (OBV):
+</h1>
+
             <input
               type="number"
               value={obv}
@@ -62,7 +67,9 @@ const Momentum = () => {
             />
           </label>
           <label>
-            50 Day Moving Average:
+          <h1 className="font-semibold text-lg text-chocolate">            50 Day Moving Average:
+</h1>
+
             <input
               type="number"
               value={movingAverage50}
@@ -72,7 +79,9 @@ const Momentum = () => {
             />
           </label>
           <label>
-            200 Day Moving Average:
+          <h1 className="font-semibold text-lg text-chocolate">            200 Day Moving Average:
+</h1>
+
             <input
               type="number"
               value={movingAverage200}
@@ -82,7 +91,9 @@ const Momentum = () => {
             />
           </label>
           <label>
-            Current Price:
+          <h1 className="font-semibold text-lg text-chocolate">            Current Price:
+</h1>
+
             <input
               type="number"
               value={currentPrice}
@@ -91,14 +102,18 @@ const Momentum = () => {
               className={styles.inputField}
             />
           </label>
-          <button type="submit">Submit!</button>
-        </form>
+          <Button 
+          type="submit" 
+          variant="contained"
+          className="p-2 m-4 text-lg font-bold text-black hover:text-chocolate hover:bg-hover-color bg-hover-color">
+            Submit!
+          </Button>        </form>
       </div>
-      <div>
-        <h3>
-          Momentum Score: {momentumResult !== null ? momentumResult : "Submit the form to see the result"}
-        </h3>
-      </div>
+      
+      {momentumResult !== null ? <div className="bg-hover-color rounded-xl outline mt-3">
+        <h3 className="text-chocolate text-center">
+          <h1 className="text-lg font-bold">Momentum Score:</h1>{momentumResult}</h3>
+      </div> : ""}
     </>
   );
 };

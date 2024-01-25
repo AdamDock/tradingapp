@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "@/styles/Home.module.css";
 import * as React from 'react';
+import Button from '@mui/material/Button';
 
 
 const Bluechip = () => {
@@ -39,11 +40,13 @@ const Bluechip = () => {
 
   return (
     <>
-      <div>
-        <h2>Blue Chip</h2>
+       <div className="bg-hover-color rounded-xl outline">        
+
+        <h2 className="text-xl font-bold text-center">Blue Chip</h2>
         <form className={styles.formContainer} onSubmit={handleSubmit}>
           <label>
-            Market Capitalization(in billions):
+            <h1 className="font-semibold text-lg text-chocolate">            Market Capitalization(in billions):
+</h1>
             <input
               type="number"
               value={marketCap}
@@ -53,7 +56,8 @@ const Bluechip = () => {
             />
           </label>
           <label>
-            Dividend(percent):
+          <h1 className="font-semibold text-lg text-chocolate">            Dividend(percent):
+</h1>
             <input
               type="number"
               value={dividend}
@@ -63,7 +67,8 @@ const Bluechip = () => {
             />
           </label>
           <label>
-            Operating Timeline in years:
+          <h1 className="font-semibold text-lg text-chocolate">            Operating Timeline in years:
+</h1>
             <input
               type="number"
               value={operatingTimeline}
@@ -73,7 +78,8 @@ const Bluechip = () => {
             />
           </label>
           <label>
-            Up/Down Volume:
+          <h1 className="font-semibold text-lg text-chocolate">            Up/Down Volume:
+</h1>
             <input
               type="number"
               value={volume}
@@ -83,7 +89,7 @@ const Bluechip = () => {
             />
           </label>
           <label>
-            Historical Volatility:
+          <h1 className="font-semibold text-lg text-chocolate">Historical Volatility:</h1>
             <input
               type="number"
               value={volatility}
@@ -92,14 +98,19 @@ const Bluechip = () => {
               className={styles.inputField}
             />
           </label>
-          <button type="submit">Submit!</button>
+          <Button 
+          type="submit" 
+          variant="contained"
+          className="p-2 m-4 text-lg font-bold text-black hover:text-chocolate hover:bg-hover-color bg-hover-color">
+            Submit!
+          </Button>
         </form>
       </div>
-      <div>
-        <h3>
-          Blue Chip Score: {bluechipResult !== null ? bluechipResult : "Submit the form to see the result"}
-        </h3>
-      </div>
+      
+               {bluechipResult !== null ? <div className="bg-hover-color rounded-xl outline mt-3">
+        <h3 className="text-chocolate text-center">
+          <h1 className="text-lg font-bold">Blue Chip Score:</h1>{bluechipResult}</h3>
+      </div> : ""}
     </>
   );
 };

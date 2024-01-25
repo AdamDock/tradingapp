@@ -9,25 +9,21 @@ import Spacer from "./stockeval/dividend";
 const Evaluator = ()=>{
 
     return (
-        <div className={styles.column}>
-            <div className={styles.solo}>
-            <Spacer/>
-
-            </div>
-            <span>
+        <div className="flex justify-evenly align-center">
+            <span className="grow p-10 ml-12">
             <Value/>
 
             </span>
-            <span>
+            <span className="grow p-10">
             <Bluechip/>
 
 
             </span>
-            <span>
+            <span className="grow p-10">
             <Growth/>
 
             </span>
-            <span>
+            <span className="grow p-10">
             <Momentum/>
 
             </span>
