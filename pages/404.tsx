@@ -1,5 +1,6 @@
+import Error from "../Components/templates/404"
 export default function error(){
     return (
-        <><h1>erroreeer</h1></>
+       <Error/>
     );
 }

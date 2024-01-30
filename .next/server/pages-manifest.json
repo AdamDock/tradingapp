@@ -1,0 +1,9 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/recommend": "pages/recommend.js",
+  "/api/subscriber": "pages/api/subscriber.js",
+  "/stockeval": "pages/stockeval.js",
+  "/marketwatch": "pages/marketwatch.js"
+}
