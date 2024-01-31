@@ -1,5 +1,4 @@
 const Holiday = require('../models/holiday');
-const mongoose = require('mongoose');
 
 module.exports.viewHolidays = async (req, res) => {
     try {

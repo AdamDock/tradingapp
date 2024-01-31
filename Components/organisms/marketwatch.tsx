@@ -1,9 +1,9 @@
 import React, { useState, useEffect} from "react";
 import styles from '@/styles/Home.module.css'
-import FedFactors from "../molecules/FedFactors";
-import Commodities from "../molecules/Commodities";
+import FedFactors from "./FedFactors";
+import Commodities from "./Commodities";
 
-const Gainers = ()=>{
+const MarketMetrics = ()=>{
 
     return (
         <div className={styles.column}>
@@ -19,4 +19,4 @@ const Gainers = ()=>{
         </div>
     );
 }
-export default Gainers;
+export default MarketMetrics;

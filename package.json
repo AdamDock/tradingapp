@@ -11,8 +11,10 @@
         "dependencies": {
                 "@emotion/react": "^11.11.3",
                 "@emotion/styled": "^11.11.0",
+                "@fontsource/roboto": "^5.0.8",
                 "@fullcalendar/daygrid": "^6.1.9",
                 "@fullcalendar/react": "^6.1.9",
+                "@mui/icons-material": "^5.15.6",
                 "@mui/material": "^5.15.6",
                 "@mui/styled-engine-sc": "^6.0.0-alpha.13",
                 "axios": "^1.6.5",
@@ -30,12 +32,15 @@
                 "pg-hstore": "^2.3.4",
                 "react": "^18.2.0",
                 "react-dom": "^18.2.0",
+                "react-financial-charts": "^2.0.1",
+                "recharts": "^2.11.0",
                 "request": "^2.88.2",
                 "scramjet": "^4.37.0",
                 "sequelize": "^6.34.0",
                 "sequelize-cli": "^6.6.2",
                 "sqlite3": "^5.1.6",
                 "styled-components": "^6.1.8",
+                "victory": "^36.8.4",
                 "wikijs": "^6.4.1"
         },
         "devDependencies": {
