@@ -23,7 +23,6 @@ const CPISchema = new Schema({
     },
     unit: {
         type: String,
-        required: true
     },
     data: [DataSchema]
 });

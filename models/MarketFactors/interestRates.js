@@ -23,7 +23,6 @@ const InterestRatesSchema = new Schema({
     },
     unit: {
         type: String,
-        required: true
     },
     data: [DataSchema]
 });

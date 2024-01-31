@@ -23,7 +23,6 @@ const TreasuryYieldSchema = new Schema({
     },
     unit: {
         type: String,
-        required: true
     },
     data: [DataSchema]
 });

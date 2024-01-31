@@ -2,14 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/home": "pages/home.js",
-  "/api/subscriber": "pages/api/subscriber.js",
-  "/api/quotes": "pages/api/quotes.js",
-  "/calendar": "pages/calendar.js",
-  "/api/marketStatus": "pages/api/marketStatus.js",
-  "/api/earningscal": "pages/api/earningscal.js",
-  "/api/commodity": "pages/api/commodity.js",
-  "/": "pages/index.js",
+  "/api/economyData": "pages/api/economyData.js",
   "/marketwatch": "pages/marketwatch.js",
-  "/stockeval": "pages/stockeval.js"
+  "/api/commodity": "pages/api/commodity.js",
+  "/api/subscriber": "pages/api/subscriber.js",
+  "/": "pages/index.js",
+  "/404": "pages/404.js"
 }
