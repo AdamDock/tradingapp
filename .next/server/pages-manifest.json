@@ -2,10 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/economyData": "pages/api/economyData.js",
   "/marketwatch": "pages/marketwatch.js",
-  "/api/commodity": "pages/api/commodity.js",
-  "/api/subscriber": "pages/api/subscriber.js",
-  "/": "pages/index.js",
-  "/404": "pages/404.js"
+  "/api/economyData": "pages/api/economyData.js"
 }

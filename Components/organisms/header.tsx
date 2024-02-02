@@ -44,7 +44,7 @@ function Header() {
   }, []);
   
   return (
-    <div className="hover:bg-hover-color rounded-xl hover:outline mt-3">
+    <div className="hover:bg-hover-color rounded-xl hover:outline hover:outline-black hover:text-chocolate mt-3">
           <h1 className="text-lg font-bold">{quote}--<em>-{author}</em></h1>
       </div>
    

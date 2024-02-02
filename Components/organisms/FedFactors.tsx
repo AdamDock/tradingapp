@@ -16,12 +16,7 @@ const FedFactors = () => {
                     .filter(item => item.value !== null)
                     .map(item => {
                         const dateParts = item.date.split('-').map(part => parseInt(part, 10));
-                        let value;
-                        if(item.value === undefined || item.value === null) {
-                            value = 5;
-                        } else {
-                            value = item.value;
-                        }
+                        let value = item.value;
                         return {
                             x: new Date(dateParts[0], dateParts[1] - 1, dateParts[2]),
                             y: value
